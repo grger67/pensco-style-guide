@@ -4,7 +4,10 @@
 <head>
 <meta charset="utf-8">
 <title>PENSCO style guide</title>
-<link rel="stylesheet" type="text/css" href="../style-guide/css/styles-01.css">
+<link type="text/css" rel="stylesheet" href="..style/css/ui-lightness/jquery-ui-1.10.4.custom.css">
+<link type="text/javascript" href="../style-guide/scripts/jquery-ui-1.10.4.js">
+<link type="text/javascript" href="../style-guide/scripts/jquery-ui-1.10.4.min.js">
+<link type="text/css"        href="../style-guide/css/styles-01.css" rel="stylesheet" >
 </head>
 
 <body>
@@ -34,11 +37,11 @@
 	</div>
 	<div id="tabs" class="content-wrapper"><!-- create a tab system here -->
 			
-		<ul>
+		<ul id="tabs-titles" class="tab-links">
 			<li>
 				<a href="#tabs-1"><h3>Java Script</h3><a>
 			</li>
-			<li>
+			<li >
 				<a href="#tabs-2"><h3>HTML</h3><a>
 			<li>
 				<a href="#tabs-3"><h3>Markup</h3><a>
@@ -48,171 +51,144 @@
 			</li>				
 		</ul>
 
-		<div id="tabs-1">
-			<h2 id="stuff">
-				Stuff
-			</h2>
-			<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distincti</p>
+		<div id="tab-content-wrapper">
 
-			<div class="highlighted">
-				<table>
-					<tbody>
-						<tr>
-							<td class="gutter">
-								<div>1</div>
-								<div>2</div>
-								<div>3</div>
-							</td>
-							<td class="code">
-								<pre>
-									<div class="container">
-										<div class="line">
-											<code>{</code>		
+			<div id="tabs-1" class="active tab-content">
+				<h2 id="stuff">
+					Stuff
+				</h2>
+				<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distincti</p>
+
+				<div class="highlighted">
+					<table>
+						<tbody>
+							<tr>
+								<td class="gutter">
+									<div>1</div>
+									<div>2</div>
+									<div>3</div>
+								</td>
+								<td class="code">
+									<pre>
+										<div class="container">
+											<div class="line">
+												<code>{</code>		
+											</div>
 										</div>
-									</div>
-									<div class="container">
-										<div class="line">
-											<code>common</code>		
+										<div class="container">
+											<div class="line">
+												<code>common</code>		
+											</div>
 										</div>
-									</div>
-									<div class="container">
-										<div class="line">
-											<code>}</code>		
+										<div class="container">
+											<div class="line">
+												<code>}</code>		
+											</div>
 										</div>
-									</div>
-								</pre>
-							</td>
-						</tr>	
-					</tbody>
-				</table>
+									</pre>
+								</td>
+							</tr>	
+						</tbody>
+					</table>
+				</div>
 			</div>
+
+			<div id="tabs-2" class="tab-content">
+				<h2 id="stuff">
+					Stuff
+				</h2>
+				<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distincti</p>
+
+				<div class="highlighted">
+					<table>
+						<tbody>
+							<tr>
+								<td class="gutter">
+									<div>1</div>
+									<div>2</div>
+									<div>3</div>
+								</td>
+								<td class="code">
+									<pre>
+										<div class="container">
+											<div class="line">
+												<code>{</code>		
+											</div>
+										</div>
+										<div class="container">
+											<div class="line">
+												<code>common</code>		
+											</div>
+										</div>
+										<div class="container">
+											<div class="line">
+												<code>}</code>		
+											</div>
+										</div>
+									</pre>
+								</td>
+							</tr>	
+						</tbody>
+					</table>
+				</div>
+			</div>		
+
+			<div id="tabs-3" class="tab-content">
+				<h2 id="stuff">
+					Stuff
+				</h2>
+				<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distincti</p>
+
+				<div class="highlighted">
+					<table>
+						<tbody>
+							<tr>
+								<td class="gutter">
+									<div>1</div>
+									<div>2</div>
+									<div>3</div>
+								</td>
+								<td class="code">
+									<pre>
+										<div class="container">
+											<div class="line">
+												<code>{</code>		
+											</div>
+										</div>
+										<div class="container">
+											<div class="line">
+												<code>common</code>		
+											</div>
+										</div>
+										<div class="container">
+											<div class="line">
+												<code>}</code>		
+											</div>
+										</div>
+									</pre>
+								</td>
+							</tr>	
+						</tbody>
+					</table>
+				</div>
+			</div>	
+
+
 		</div>
-
-		<div id="tabs-2">
-			<h2 id="stuff">
-				Stuff
-			</h2>
-			<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distincti</p>
-
-			<div class="highlighted">
-				<table>
-					<tbody>
-						<tr>
-							<td class="gutter">
-								<div>1</div>
-								<div>2</div>
-								<div>3</div>
-							</td>
-							<td class="code">
-								<pre>
-									<div class="container">
-										<div class="line">
-											<code>{</code>		
-										</div>
-									</div>
-									<div class="container">
-										<div class="line">
-											<code>common</code>		
-										</div>
-									</div>
-									<div class="container">
-										<div class="line">
-											<code>}</code>		
-										</div>
-									</div>
-								</pre>
-							</td>
-						</tr>	
-					</tbody>
-				</table>
-			</div>
-		</div>		
-
-		<div id="tabs-3">
-			<h2 id="stuff">
-				Stuff
-			</h2>
-			<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distincti</p>
-
-			<div class="highlighted">
-				<table>
-					<tbody>
-						<tr>
-							<td class="gutter">
-								<div>1</div>
-								<div>2</div>
-								<div>3</div>
-							</td>
-							<td class="code">
-								<pre>
-									<div class="container">
-										<div class="line">
-											<code>{</code>		
-										</div>
-									</div>
-									<div class="container">
-										<div class="line">
-											<code>common</code>		
-										</div>
-									</div>
-									<div class="container">
-										<div class="line">
-											<code>}</code>		
-										</div>
-									</div>
-								</pre>
-							</td>
-						</tr>	
-					</tbody>
-				</table>
-			</div>
-		</div>	
-
-		<div id="tabs-4">
-			<h2 id="stuff">
-				Stuff
-			</h2>
-			<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distincti</p>
-
-			<div class="highlighted">
-				<table>
-					<tbody>
-						<tr>
-							<td class="gutter">
-								<div>1</div>
-								<div>2</div>
-								<div>3</div>
-							</td>
-							<td class="code">
-								<pre>
-									<div class="container">
-										<div class="line">
-											<code>{</code>		
-										</div>
-									</div>
-									<div class="container">
-										<div class="line">
-											<code>common</code>		
-										</div>
-									</div>
-									<div class="container">
-										<div class="line">
-											<code>}</code>		
-										</div>
-									</div>
-								</pre>
-							</td>
-						</tr>	
-					</tbody>
-				</table>
-			</div>
-		</div>	
 
 	</div>
 
-
 	<footer></footer>
+
 </div>
+
+<script>
+$(function()){
+	$('#tabs').tab();
+});
+
+
+</script>
 
 </body>
 </html>
