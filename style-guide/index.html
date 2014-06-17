@@ -4,9 +4,10 @@
 <head>
 <meta charset="utf-8">
 <title>PENSCO style guide</title>
-<link type="text/css" rel="stylesheet" href="..style/css/ui-lightness/jquery-ui-1.10.4.custom.css">
-<link type="text/javascript" href="../style-guide/scripts/jquery-ui-1.10.4.js">
-<link type="text/javascript" href="../style-guide/scripts/jquery-ui-1.10.4.min.js">
+<script type="text/javascript" src="../style-guide/scripts/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="../style-guide/scripts/jquery-ui-1.10.4.js"></script>
+<script type="text/javascript" src="../style-guide/scripts/jquery-ui-1.10.4.custom.js"></script>
+<link type="text/css" 		 href="../style-guide/css/ui-lightness/jquery-ui-1.10.4.custom.css" rel="stylesheet" >
 <link type="text/css"        href="../style-guide/css/styles-01.css" rel="stylesheet" >
 </head>
 
@@ -35,145 +36,79 @@
 			</nav>
 		</aside>
 	</div>
-	<div id="tabs" class="content-wrapper"><!-- create a tab system here -->
-			
-		<ul id="tabs-titles" class="tab-links">
-			<li>
-				<a href="#tabs-1"><h3>Java Script</h3><a>
-			</li>
-			<li >
-				<a href="#tabs-2"><h3>HTML</h3><a>
-			<li>
-				<a href="#tabs-3"><h3>Markup</h3><a>
-			</li>						
-			<li>
-				<a href="#tabs-4"><h3>Commits and Pull Requests</h3><a>
-			</li>				
+
+	<div id="tabs" class="content-wrapper">
+		<ul class="tab-nav-container">
+			<li><a href="#fragment-1"><span>JS Style Guide</span></a></li>
+			<li><a href="#fragment-2"><span>HTML Style Guide</span></a></li>
+			<li><a href="#fragment-3"><span>Markup Conventions</span></a></li>
+			<li><a href="#fragment-4"><span>Commit and Pull Requests</span></a></li>
 		</ul>
-
-		<div id="tab-content-wrapper">
-
-			<div id="tabs-1" class="active tab-content">
-				<h2 id="stuff">
-					Stuff
-				</h2>
-				<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distincti</p>
-
-				<div class="highlighted">
-					<table>
-						<tbody>
-							<tr>
-								<td class="gutter">
-									<div>1</div>
-									<div>2</div>
-									<div>3</div>
-								</td>
-								<td class="code">
-									<pre>
-										<div class="container">
-											<div class="line">
-												<code>{</code>		
-											</div>
-										</div>
-										<div class="container">
-											<div class="line">
-												<code>common</code>		
-											</div>
-										</div>
-										<div class="container">
-											<div class="line">
-												<code>}</code>		
-											</div>
-										</div>
-									</pre>
-								</td>
-							</tr>	
-						</tbody>
-					</table>
-				</div>
+		<div id="fragment-1" class="tab-content-container">
+			<h1>JavaScript Style Guide</h1>
+			<hr>
+			<ul class="toc-inner">
+				<li><a href="#linting">Linting</a></li>
+				<li><a href="#spacing">Spacing</a>
+					<ul class="indent">
+						<li><a href="#bad-examples">Bad Examples</a></li>
+						<li><a href="#good-examples">Good Examples</a></li>	
+						<li><a href="#objects">Objects</a></li>	
+						<li><a href="#arrays-and-function-calls">Arrays and Function Calls</a></li>
+						<li><a href="#multi-line-statements">Multi-line Statements</a></li>	
+						<li><a href="#chained-method-calls">Chained Method Calls</a></li>	
+						<li><a href="#full-file-closures">Full File Closures</a></li>				
+					</ul>
+				</li>		
+				<li><a href="#assignments">Assignments</a></li>
+				<li><a href="#equality">Equality</a></li>	
+				<li><a href="#type-of-checks">Type of Checks</a></li>
+				<li><a href="#comments">Comments</a></li>	
+				<li><a href="#quotes">Quotes</a></li>		
+				<li><a href="#semicolons">Semicolons</a></li>	
+				<li><a href="#naming-conventsions">Naming Conventions</a></li>
+				<li><a href="#global-variables">Global Variables</a></li>
+				<li><a href="#dom-node-rules">DOM Node Rules</a></li>
+				<li><a href="#switch-statements">Switch Statements</a></li>				
+			</ul>
+			<h2><a id="linting"></a>Linting</h2>
+			<p>Use JSHint to detect errors and potential problems. Every jQuery project has a Grunt task for linting all JavaScript files: grunt <code>.jshintrc</code>. The options for JSHint are stored in a .jshintrc file; many repositories will have multiple <code>.jshintrc</code> files based on the type of code in each directory.</p>
+			<pre><code>$( "#tabs" ).tabs(); </code></pre>
 			</div>
 
-			<div id="tabs-2" class="tab-content">
-				<h2 id="stuff">
-					Stuff
-				</h2>
-				<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distincti</p>
+		<div id="fragment-2" class="tab-content-container">
 
-				<div class="highlighted">
-					<table>
-						<tbody>
-							<tr>
-								<td class="gutter">
-									<div>1</div>
-									<div>2</div>
-									<div>3</div>
-								</td>
-								<td class="code">
-									<pre>
-										<div class="container">
-											<div class="line">
-												<code>{</code>		
-											</div>
-										</div>
-										<div class="container">
-											<div class="line">
-												<code>common</code>		
-											</div>
-										</div>
-										<div class="container">
-											<div class="line">
-												<code>}</code>		
-											</div>
-										</div>
-									</pre>
-								</td>
-							</tr>	
-						</tbody>
-					</table>
-				</div>
-			</div>		
+		Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+		Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+		</div>
 
-			<div id="tabs-3" class="tab-content">
-				<h2 id="stuff">
-					Stuff
-				</h2>
-				<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distincti</p>
+		<div id="fragment-3" class="tab-content-container">
+		Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+		Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+		Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+		</div>
 
-				<div class="highlighted">
-					<table>
-						<tbody>
-							<tr>
-								<td class="gutter">
-									<div>1</div>
-									<div>2</div>
-									<div>3</div>
-								</td>
-								<td class="code">
-									<pre>
-										<div class="container">
-											<div class="line">
-												<code>{</code>		
-											</div>
-										</div>
-										<div class="container">
-											<div class="line">
-												<code>common</code>		
-											</div>
-										</div>
-										<div class="container">
-											<div class="line">
-												<code>}</code>		
-											</div>
-										</div>
-									</pre>
-								</td>
-							</tr>	
-						</tbody>
-					</table>
-				</div>
-			</div>	
+		<div id="fragment-4" class="tab-content-container">
 
-
+			<h1>Commits and Pull Requests</h1>
+			<hr>
+			<ul class="toc-inner">
+				<li><a href="#fork">Working With a Fork</a></li>
+				<li><a href="#master-commit">Never Commit on Master</a></li>
+				<li><a href="#branching">Branching</a></li>
+				<li><a href="#preparing-commit">Preparing to Commit</a></li>	
+				<li><a href="#master-commit">Commit Guidelines</a>
+					<ul class="indent">
+						<li><a href="#subject">Subject</a></li>
+						<li><a href="#long-desc">Long Description</a></li>	
+						<li><a href="#references">References</a></li>			
+					</ul>
+				</li>		
+				<li><a href="#pull-request">Your Pull Request</a></li>				
+			</ul>			
+		Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+		Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+		Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
 		</div>
 
 	</div>
@@ -183,9 +118,8 @@
 </div>
 
 <script>
-$(function()){
-	$('#tabs').tab();
-});
+$( "#tabs" ).tabs();
+	
 
 
 </script>

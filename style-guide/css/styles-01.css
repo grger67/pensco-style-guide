@@ -49,8 +49,58 @@ table {
 
 /* -- end reset -- */
 
+/* basic sytles -- */
+
+body{
+  font-family:sans-serif;
+  color:#444;
+}
+
+h1 {
+  font-size:33px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3{
+  font-size:18px;
+}
+
+p {
+  font-size:14px;
+}
+
+hr {
+  border: medium none;
+  height: 0.75em;
+  margin: 0.75em 0;
+  background-color: #cfdbb7;
+}
+
+a{
+  color: #3488cc;
+}
+
+code {
+  background-color: #eee;
+  border-radius: 3px;
+  padding: 0 3px;
+}
+
+pre, code {
+  font-size: 13px;
+  line-height: 16px;
+  white-space: pre-wrap;
+  word-spacing: 0;
+  word-wrap: break-word;
+}
+
 .wrapper {
   background: none repeat scroll 0 0 #e8e8e8;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 .logo-container {
@@ -64,6 +114,7 @@ table {
 	float:left;
 	width:20%;
 	background-color:#ccc;
+	margin-top:25px;
 }
 
 .side-bar h3 {
@@ -74,8 +125,11 @@ table {
 }
 
 .content-wrapper {
-  float: right;
-  width: 80%;
+  float: left;
+  margin-left: 20px;
+  padding:16px;
+  width: 75%;
+  margin-top:25px;
 }
 
 .highlighted {
@@ -91,7 +145,7 @@ table {
 
 /* -- tab system -- */
 
-#tabs-titles li {
+.content-wrapper .tab-nav-container li {
   background-color: #ccc;
   border-radius: 3px;
   float: left;
@@ -100,31 +154,131 @@ table {
   cursor:pointer;
 }
 
-#tabs-titles a {
+.content-wrapper .tab-nav-container a {
   text-decoration: none;
   font-size: 16px;
-  color: #444;
   font-family: arial;
 }
 
-#tabs-titles a:hover{
-	color:#fff;
+.content-wrapper .tab-nav-container a:hover{
+	color:#eb8f00;
 }
 
-#tab-content-wrapper {
-	background:#ccc;
+
+.content-wrapper ul {
+  position: relative;
+}
+
+.content-wrapper .tab-content-container {
+  background: none repeat scroll 0 0 #fff;
+  margin-left: 0;
+  margin-top: 15px;
+  padding: 16px;
+}
+
+.content-wrapper .tab-nav-container li {
+  background-color: #eee;
+  border: 1px solid #cccccc;
+  color: #444;
+  font-weight: bold;
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-active {
+  background-color: #fff;
+  background-image: none;
+  margin-bottom: -1px;
+  padding-bottom:inherit;
+}
+
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default {
+	border: 1px solid #cccccc;
+	background: #f6f6f6 url("images/ui-bg_glass_100_f6f6f6_1x400.png") 50% 50% repeat-x;
+	font-weight: bold;
+	color: #1c94c4;
+	background-image:none;
+}
+.ui-state-default a,
+.ui-state-default a:link,
+.ui-state-default a:visited {
+	color: #444;
+	text-decoration: none;
+}
+
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-focus {
+	border: 1px solid #fbcb09;
+	background: #fdf5ce url("images/ui-bg_glass_100_fdf5ce_1x400.png") 50% 50% repeat-x;
+	font-weight: bold;
+	color: #eb8f00;
+	background-image:none;
+}
+.ui-state-hover a,
+.ui-state-hover a:hover,
+.ui-state-hover a:link,
+.ui-state-hover a:visited,
+.ui-state-focus a,
+.ui-state-focus a:hover,
+.ui-state-focus a:link,
+.ui-state-focus a:visited {
+	color: #eb8f00;
+	text-decoration: none;
+}
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active {
+	border: 1px solid #fbd850;
+	background: #ffffff url("images/ui-bg_glass_65_ffffff_1x400.png") 50% 50% repeat-x;
+	font-weight: bold;
+	color: #eb8f00;
+}
+.ui-state-active a,
+.ui-state-active a:link,
+.ui-state-active a:visited {
+	color: #eb8f00;
+	text-decoration: none;
+}
+
+.tab-nav-container{
+
+
+}
+
+.tab-nav-container.ui-widget-header {
+  background: none repeat scroll 0 0 #cfdbb7;
+  border: 1px solid #cfdbb7;
+  color: #ffffff;
+  font-weight: bold;
+  padding-bottom: 8px;
+  padding-left: 8px;
+  padding-top: 8px;
+}
+
+.tab-content-container {
+	background:#fff;
 	margin-left:100px;
 	padding:16px;
 }
 
-#tab-content-wrapper div {
-	display:none;
+.tab-content-container h2 {
+  margin-bottom:10px;
+}
+/* -- Inner Table of Contents -- */
+
+.toc-inner {
+  font-size: 16px;
+  line-height: 24px;
+  list-style: disc outside none;
+  margin-left: 30px;
+  margin-bottom:20px;
 }
 
-#tab-content-wrapper div:first-child{
-	display:block;
-}
-
-#tab-content {
-  float: left;
+.indent {
+  margin-left:20px;
+  list-style:disc outside none;
 }
