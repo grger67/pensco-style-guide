@@ -73,6 +73,40 @@
 			</ul>
 			<h2><a id="linting"></a>Linting</h2>
 			<p>Use JSHint to detect errors and potential problems. Every jQuery project has a Grunt task for linting all JavaScript files: grunt <code>.jshintrc</code>. The options for JSHint are stored in a .jshintrc file; many repositories will have multiple <code>.jshintrc</code> files based on the type of code in each directory.</p>
+			<p>Each <code>.jshintrc</code> file follows a specific format. All options must be alphabetized and grouped:</p>
+			<div class="syntaxhighlighter nogutter">
+				<table>
+					<tbody>
+						<tr>
+							<td class="gutter">
+								<div class="line">1</div>
+								<div class="line">2</div>
+								<div class="line">3</div>
+								<div class="line">4</div>
+								<div class="line">5</div>
+								<div class="line">6</div>	
+								<div class="line">7</div>
+								<div class="line">8</div>
+								<div class="line">9</div>
+								<div class="line">10</div>
+								<div class="line">11</div>
+								<div class="line">12</div>																																
+							</td>
+							<td class="code">
+								<pre>
+									<div class="container">
+										<div class="line">
+											<code>{</code>
+										</div>
+									</div>
+									<div class="container"><div class="line"><code>    "<span class="attribute">common1</span>": <span class="value"><span class="literal">true</span></span>,</code></div></div>
+									<div class="container"><div class="line"><code>    "<span class="attribute">common2</span>": <span class="value"><span class="literal">true</span></span>,</code></div></div>
+								</pre>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 			<pre><code>$( "#tabs" ).tabs(); </code></pre>
 			</div>
 
