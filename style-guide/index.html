@@ -44,7 +44,7 @@
 			<li><a href="#fragment-3"><span>Markup Conventions</span></a></li>
 			<li><a href="#fragment-4"><span>Commit and Pull Requests</span></a></li>
 		</ul>
-		<div id="fragment-1" class="tab-content-container">
+		<div id="fragment-1" class="tab-content-container"><!-- first tab starts here -->
 			<h1>JavaScript Style Guide</h1>
 			<hr>
 			<ul class="toc-inner">
@@ -74,47 +74,289 @@
 			<h2><a id="linting"></a>Linting</h2>
 			<p>Use JSHint to detect errors and potential problems. Every jQuery project has a Grunt task for linting all JavaScript files: grunt <code>.jshintrc</code>. The options for JSHint are stored in a .jshintrc file; many repositories will have multiple <code>.jshintrc</code> files based on the type of code in each directory.</p>
 			<p>Each <code>.jshintrc</code> file follows a specific format. All options must be alphabetized and grouped:</p>
-			<div class="syntaxhighlighter nogutter">
-				<table>
-					<tbody>
-						<tr>
-							<td class="gutter">
-								<div class="line">1</div>
-								<div class="line">2</div>
-								<div class="line">3</div>
-								<div class="line">4</div>
-								<div class="line">5</div>
-								<div class="line">6</div>	
-								<div class="line">7</div>
-								<div class="line">8</div>
-								<div class="line">9</div>
-								<div class="line">10</div>
-								<div class="line">11</div>
-								<div class="line">12</div>																																
-							</td>
-							<td class="code">
-								<pre>
-									<div class="container">
-										<div class="line">
-											<code>{</code>
-										</div>
-									</div>
-									<div class="container"><div class="line"><code>    "<span class="attribute">common1</span>": <span class="value"><span class="literal">true</span></span>,</code></div></div>
-									<div class="container"><div class="line"><code>    "<span class="attribute">common2</span>": <span class="value"><span class="literal">true</span></span>,</code></div></div>
-								</pre>
-							</td>
-						</tr>
-					</tbody>
-				</table>
+			<div class="syntax-container">
+				<pre><code>{  
+	"common1": true,
+	"common2": true,
+
+	"repoSpecific1": true,
+	"repoSpecific2": true,
+
+	"globals": {
+		"repoGlobal1": true,
+		"repoGlobal2": false
+	}
+}
+				</code></pre>
 			</div>
-			<pre><code>$( "#tabs" ).tabs(); </code></pre>
+	
+			<p>The following common options must be used in all projects:</p>
+			<div class="syntax-container">
+				<pre><code>{  
+	"box": true,
+	"curly": true,
+	"eqeqeq": true,
+	"expr": true,
+	"immed": true,
+	"noarg": true,	
+	"quotmark": "double",
+	"snarttabs": true,
+	"trailing": true,
+	"undef": true,
+	"unused": true
+}
+				</code></pre>
 			</div>
 
-		<div id="fragment-2" class="tab-content-container">
+			<p>If the project supports browsers which do not implement ES5, then the <code>es3</code> option must be included with the repo-specific options.</p>
 
-		Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-		Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-		</div>
+
+			<h2><a id="spacing"></a>Spacing</h2>
+			<p>In general, the jQuery style guide encourages liberal spacing for improved human readability. The minification process creates a file that is optimized for browsers to read and process.</p>
+
+			<ul class="toc-inner">
+				<li>Indentation with tabs.</li>
+				<li>No whitespace at the end of line or on blank lines.</li>
+				<li>Lines should be no longer than 80 characters, and must not exceed 100 (counting tabs as 4 spaces).</li>	
+				<li><code>if/else/for/while/try </code>always have braces and always go on multiple lines.</li>	
+				<li>Unary special-character operators (e.g.,<code> !, ++</code>) must not have space next to their operand.</li>
+				<li>Any <code>, </code>and <code>; </code>must not have preceding space.</li>	
+				<li>Any <code>; </code>used as a statement terminator must be at the end of the line.</li>	
+				<li>Any <code>: </code>after a property name in an object definition must not have preceding space.</li>					
+				<li>The <code>? </code>and <code>: </code>in a ternary conditional must have space on both sides.</li>
+				<li>No filler spaces in empty constructs (e.g., <code>{}, [], fn())</code></li>	
+				<li>New line at the end of each file.</li>
+				<li>If the entire file is wrapped in a closure, the function body is not indented.</li>			
+			</ul>
+
+			<h4 id="bad-examples">Bad Examples</h4>
+			<div class="syntax-container">
+				<pre><code> 
+//bad
+if(condition) doSomething();
+while(!condition) iterating++;
+for(var i=0;i< 100;i++) object[array[i]] = someFn(i);
+				</code></pre>
+			</div>
+
+			<h4 id="good-examples">Good Examples</h4>
+			<div class="syntax-container">
+				<pre><code> 
+var i = 0;
+
+if ( condition ) {
+	doSomething();
+} else if ( other condition ) {
+	somethingElse();
+} else {
+	otherThing();
+}
+
+while ( !condition ) {
+	iterating++i;
+}
+
+for ( ; i < 100; i++) {
+	object[ array[i] ] = someFn(i);
+}
+
+try {
+	// Expressions
+} catch (e) {
+	// Expressions
+}
+				</code></pre>
+			</div>
+
+			<h4 id="objects">Objects</h4>
+			<p>Object declarations can be made on a single line if they are short (remember the line length limits). When an object declaration is too long to fit on one line, there must be one property per line. Property names only need to be quoted if they are reserved words or contain special characters:</p>
+			<div class="syntax-container">
+				<pre><code> 
+//bad
+var map = { ready:9,
+	when: 4, "you are": 15};
+
+//good			
+var map = { ready: 9, when: 4, "you are": 15 };
+
+//good as well
+var map = {
+	ready: 9, 
+	when: 4, 
+	"you are": 15
+}
+				</code></pre>
+			</div>
+
+			<h4 id="arrays-and-function-calls">Arrays and Function Calls</h4>
+			<p>Always include extra spaces around elements and arguments:</p>
+
+			<div class="syntax-container">
+				<pre><code> 
+array = [ "*" ];
+
+array = [ a, b ];
+
+foo( arg );
+
+foo( "string", object );
+
+foo( options, object[ property ] );
+
+foo( node, "property", 2 );
+
+				</code></pre>
+
+			</div>
+
+			<p>Exceptions:</p>
+
+			<div class="syntax-container">
+				<pre><code> 
+// Function with a callback, object, or array as the sole argument:
+// No space on either side of the argument
+foo({
+	a: "alpha",
+	b: "beta"	
+});
+
+// Function with a callback, object, or array as the first argument:
+// No space before the first argument	
+foo(function() {
+	// Do stuff
+}, options );
+
+// Function with a callback, object, or array as the last argument:
+// No space after after the last argument	
+foo( data, function() {
+	// Do stuff
+	});	
+				</code></pre>
+
+			</div>		
+
+			<h4 id="multi-line-statements">Multi-line Statements</h4>
+			<p>When a statement is too long to fit on one line, line breaks must occur after an operator.</p>
+
+			<div class="syntax-container">
+				<pre><code> 
+//bad			
+var html = "The sum of " + a + " and " + b + " plus " + c
+	+ " is " + (a + b + c);
+
+//good
+var html = "The sum of " + a + " and " + b + " plus " + c +
+	" is " + (a + b + c);
+
+				</code></pre>
+
+			</div>		
+
+			<p>Lines should be broken into logical groups if it improves readability, such as splitting each expression of a ternary operator onto its own line eve if both will fit 
+				on a single line</p>
+
+			<div class="syntax-container">
+				<pre><code> 
+var baz = firstCondition( foo ) && secondCondition( bar ) ?
+qux( foo, bar ) :
+foo;
+
+				</code></pre>
+
+			</div>				
+
+			<p>When a condition is too long to fit on one line, successive lines must be indented one extra level to distinguish them from the body.</p>
+
+			<div class="syntax-container">
+				<pre><code> 
+	 if ( firstCondition() && secondCondition() &&
+	thirdCondition() ) {
+	doStuff();
+	}
+
+				</code></pre>
+
+			</div>		
+
+			<h4 id="chained-method-calls">Chained Method Calls</h4>
+			<p>When a chain of method calls is too long to fit on one line, there must be on call per line, with the first call on a separate line from 
+				the object the methods are called on. If the method changes the context, an extra level of indentation must be used.</p>
+
+			<div class="syntax-container">
+				<pre><code> 
+elements
+	.addClass( "foo" )
+	.children()
+	.html( "hello" )
+	.end()
+	.appendTo( "body" );
+
+				</code></pre>
+
+			</div>		
+
+		</div><!-- first tab ends here -->
+
+		<div id="fragment-2" class="tab-content-container"><!-- 2nd tab starts here -->
+
+			<h1>HTML Style Guide</h1>
+			<hr>
+			<ul class="toc-inner">
+				<li><a href="#doctype">Doctype</a></li>
+				<li><a href="#language">Language</a></li>		
+				<li><a href="#encoding">Encoding</a></li>
+				<li><a href="#elementsAttributes">Elements and Attributes</a></li>	
+				<li><a href="#type-of-checks">Indentation</a></li>
+			</ul>
+
+			<h4 id="doctype">Doctype</h4>
+			<p>Always use the minimal, versionless doctype.</p>
+
+			<div class="syntax-container">
+				<pre><code> 
+&lt;!doctype html&gt;
+				</code></pre>
+
+			</div>		
+
+			<h4 id="doctype">Language</h4>
+			<p>Always define what language the page is written in.</p>
+
+			<div class="syntax-container">
+				<pre><code> 
+&lt;html lan="en"&gt;
+				</code></pre>
+
+			</div>		
+
+			<h4 id="encoding">Encoding</h4>
+			<p>Always definethe character encoding. The encoding should be defined as early as possible.</p>
+
+			<div class="syntax-container">
+				<pre><code> 
+&lt;meta charset="utf-8"&gt;
+				</code></pre>
+
+			</div>		
+
+			<h4 id="elementsAttributes">Elements and Attributes</h4>
+			<p>All element and attribute names should be lowercase. Attribute values should be quoted. Optional closing tags should be included. Self-closing elements should not be closed. Optional attributes should be omitted. Always include <code>html, head, </code>and <code>body tags</code>.</p>
+
+			<ul class="indent">
+				<li>No <code>type</code> or <code>language</code> attributes on script tags.</li>
+				<li>No <code>type </code>attribute on <code>link</code> or <code>style</code> tags.</li>
+			<div class="syntax-container">
+				<pre><code> 
+&lt;script src="..."&gt;&lt;/script&gt;
+&lt;script&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" href="..."&gt;
+&lt;style&gt;&lt;/style&gt;
+				</code></pre>
+
+			</div>		
+
+
+		</div><!-- 2nd tab ends here -->
 
 		<div id="fragment-3" class="tab-content-container">
 		Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
